@@ -3,5 +3,5 @@
 # Iniciar Servidor
 `ng serve --o`
 
-# agregar componentes 
+# Agregar componentes 
 `ng g c components/<name>`
