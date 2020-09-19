@@ -1,0 +1,32 @@
+<div class="row" style="padding-top: 10px;">
+    <div class="col-lg-12">
+        <h3 align="center">Zoologico la Aurora</h3>
+    </div>
+</div>
+<br>
+<form [formGroup]="form" (ngSubmit)="submitForm()" novalidate>
+
+    <div *ngFor="let data of Data; let i=index">
+      <label>
+        <input type="checkbox" [value]="data.value" (change)="onCheckboxChange($event)" />
+        {{data.name}}
+      </label>
+    </div>
+  
+    <input class="btn btn-primary float-right" type="submit" value="Consultar">
+</form>
+<br><br>
+<table class="table table-sm table-hover">
+    <thead>
+        <th>Nombre</th>
+        <th>Nombre Cientifico</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let animal of listAnimales">
+            <td id="color1" >{{animal.nombre}}</td>
+            <td id="color1">{{animal.nombre_cientifico}}</td>
+            <td><button class="btn btn-light btn-sm float-right" [routerLink] = "['/animal/', 'leon']">Informacion</button></td>
+        </tr>
+    </tbody>
+</table>

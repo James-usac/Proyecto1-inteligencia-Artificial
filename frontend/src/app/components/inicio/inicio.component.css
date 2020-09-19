@@ -1,0 +1,56 @@
+.example-section {
+    margin: 12px 0;
+  }
+  
+  .example-margin {
+    margin: 0 12px;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin-top: 4px;
+  }
+  table {
+    width: 100%;
+    border: 1px solid #000;
+ }
+ th, td {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid rgb(250, 250, 250);
+    border-collapse: collapse;
+    background: #3d3b39;
+    border-style: solid;
+    border-color: #cccccc;
+    padding: 0.3em;
+    caption-side: bottom;
+ }
+ caption {
+    padding: 0.3em;
+    color: #fff;
+     background: #3d3b39;
+ }
+ th {
+    background: #EA2340;
+ }
+
+ tfoot.pie tr td {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Georgia;
+    padding: 2px;
+}
+
+tbody.cuerpo tr td {
+    color: #ebebeb;
+    padding: 10px;
+}
+
+tfoot.pie tr td {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Georgia;
+    padding: 2px;
+}
+#color1{color:#cccccc;}
