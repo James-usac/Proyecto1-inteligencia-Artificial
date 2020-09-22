@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
 import { stringify } from 'querystring';
 import { Animalesdto } from '../../models/Animalesdto';
+import { AnimalesSerService } from 'src/app/services/animales-ser.service';
+import { consultadto } from 'src/app/models/consultadto';
 
 @Component({
   selector: 'app-inicio',
@@ -12,9 +14,9 @@ import { Animalesdto } from '../../models/Animalesdto';
 
 export class InicioComponent implements OnInit {
   Data: Array<any> = [
-    { name: 'Longevidad Baja', value: 'longbaja' },
-    { name: 'Longevidad Normal', value: 'longnormal' },
-    { name: 'Longevidad Alta', value: 'longalta' },
+    { name: 'Longevidad Baja', value: 'longevidadb' },
+    { name: 'Longevidad Normal', value: 'longevidadn' },
+    { name: 'Longevidad Alta', value: 'longevidada' },
     { name: 'Pez', value: 'pez' },
     { name: 'Anfibio', value: 'anfibio' },
     { name: 'Reptil', value: 'reptil' },
@@ -54,8 +56,26 @@ export class InicioComponent implements OnInit {
   }
 
   submitForm() {
+    //enviar peticion
+    var resultado = new consultadto();
     this.listAnimales = [this.listAnimales2]
-    console.log(this.form.value);
+    //console.log(this.form.)
     
+    this.form.value.checkArray.forEach(element => {
+      switch(element) {
+        case "longevidadb":
+          resultado.longevidadb = "si"
+          break;
+        case "longevidadn":
+          resultado.longevidadn = "si"
+          break;
+        case "longevidada":
+            resultado.longevidada = "si"
+            break;
+        default:
+          // code block
+      }
+    });
+    console.log(resultado)
   }
 }
