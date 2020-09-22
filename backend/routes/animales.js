@@ -6,4 +6,5 @@ router.get('/', animalesController.usuarios_list);
 
 router.post('/', animalesController.consulta_animales);
 
+
 module.exports = router;

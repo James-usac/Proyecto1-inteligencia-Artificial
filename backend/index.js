@@ -1,10 +1,15 @@
 const express = require("express");
-const app = express();
-
+var app = express();
+const cors = require('cors');
 var path = require('path');
-var animalesRouter = require('./routes/animales')
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors())
+app.use(express.json());
+
+
+var animalesRouter = require('./routes/animales')
+
 
 //routas
 app.use('/animales', animalesRouter);
@@ -18,3 +23,18 @@ app.listen(3000, () => {
 });
 
 module.exports = app;
+
+
+/*
+var express = require('express'); 
+const app = express();
+app.use(express.json());
+
+app.post('/', function(req, res){ 
+    console.log(req.body); 
+    res.send("ok"); 
+}); 
+
+app.listen(3000); 
+console.log('listening to http://localhost:3000'); 
+*/

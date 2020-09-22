@@ -4,6 +4,9 @@ import { stringify } from 'querystring';
 import { Animalesdto } from '../../models/Animalesdto';
 import { AnimalesSerService } from 'src/app/services/animales-ser.service';
 import { consultadto } from 'src/app/models/consultadto';
+import { Router } from '@angular/router';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+
 
 @Component({
   selector: 'app-inicio',
@@ -27,7 +30,9 @@ export class InicioComponent implements OnInit {
   listAnimales: Animalesdto[];
   listAnimales2: Animalesdto;
   
-    constructor(private fb: FormBuilder) {
+    constructor(private fb: FormBuilder,
+       private animalser: AnimalesSerService,
+       private router: Router) {
       this.form = this.fb.group({
         checkArray: this.fb.array([])
       })
@@ -70,12 +75,26 @@ export class InicioComponent implements OnInit {
           resultado.longevidadn = "si"
           break;
         case "longevidada":
-            resultado.longevidada = "si"
-            break;
-        default:
-          // code block
+          resultado.longevidada = "si"
+          break;
+        case "anfibio":
+          resultado.anfibio = "si"
+          break;
+        case "invertebrado":
+          resultado.invertebrado = "si"
+          break;
+        case "pez":
+          resultado.pez= "si"
+          break;
+        case "reptil":
+          resultado.reptil= "si"
+          break;
+        
       }
     });
-    console.log(resultado)
+    this.animalser.guardaranimales(resultado).subscribe(data => {
+        console.log(data)
+        this.listAnimales = data.Lista_animales
+    });
   }
 }
