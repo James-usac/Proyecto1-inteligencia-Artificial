@@ -4,7 +4,7 @@
 **Institución**: Universidad de San Carlos de Guatemala  
 
 **Estudiante 1**: James Allan Melgar (201314716)  
-**Estudiante 2**: Ottoniel Guarchaj  (201010975) 
+**Estudiante 2**: Ottoniel Guarchaj  (201020975) 
 
 Contenido de Documentación:
 
