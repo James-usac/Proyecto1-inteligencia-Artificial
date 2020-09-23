@@ -2,10 +2,20 @@ const express = require("express");
 var app = express();
 const cors = require('cors');
 var path = require('path');
+var logger = require('morgan');
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors())
 app.use(express.json());
+
+var mongoose = require('mongoose');
+
+// mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+var mongoDB = "mongodb://localhost/animales";
+mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDb connection error: '));
 
 
 var animalesRouter = require('./routes/animales')
