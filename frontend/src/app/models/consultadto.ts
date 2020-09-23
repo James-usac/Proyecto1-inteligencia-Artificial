@@ -7,6 +7,7 @@ export class consultadto {
     reptil: string;
     invertebrado: string;
     vertebrado: string;
+    animal: string;
     constructor() {
         this.longevidadb = "_";
         this.longevidadn = "_";

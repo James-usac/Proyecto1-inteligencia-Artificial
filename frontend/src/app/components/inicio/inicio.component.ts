@@ -29,7 +29,8 @@ export class InicioComponent implements OnInit {
   form: FormGroup;
   listAnimales: Animalesdto[];
   listAnimales2: Animalesdto;
-  
+  loading = false;
+  textoDeInput: string = null;
     constructor(private fb: FormBuilder,
        private animalser: AnimalesSerService,
        private router: Router) {
@@ -61,6 +62,7 @@ export class InicioComponent implements OnInit {
   }
 
   submitForm() {
+    this.loading = true;
     //enviar peticion
     var resultado = new consultadto();
     this.listAnimales = [this.listAnimales2]
@@ -89,12 +91,18 @@ export class InicioComponent implements OnInit {
         case "reptil":
           resultado.reptil= "si"
           break;
-        
       }
     });
+    if(this.textoDeInput==null){
+      resultado.animal = "X";
+    }else{
+      resultado.animal = this.textoDeInput;
+    }
     this.animalser.guardaranimales(resultado).subscribe(data => {
         console.log(data)
+        this.textoDeInput = null
         this.listAnimales = data.Lista_animales
+        this.loading = false;
     });
   }
 }
