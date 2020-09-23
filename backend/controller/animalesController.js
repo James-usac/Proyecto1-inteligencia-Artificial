@@ -5,8 +5,8 @@ var cosulta = require('../models/consultadt')
 //db.animal.insert({ "nombre": "leon" ,"altura": "1.70 mt","peso": "30 kg","anio": 20,"nombre_cientifico": "Panthera leo","continente":"Africano, Europeo","población": 2000,"velocidad": "100 km/hrs"});
 exports.usuarios_list = function(req, res){
     //var bici = animalesShema.createInstance("rinoceronte","1.7","30",20,"pantera","africano","2000","100K");
-   //animalesShema.add(bici);
-    consulta = { nombre: "rinoceronte" }
+    //animalesShema.add(bici);
+    consulta = { nombre: req.params.id }
     animalesShema.find(consulta, (err, usuarios) => { 
         res.send(usuarios[0])
     }); 

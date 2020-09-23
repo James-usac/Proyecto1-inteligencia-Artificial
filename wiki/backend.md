@@ -6,3 +6,6 @@
 
 # Agregando Express
 `npm install express --save`
+
+# Instalando moongodb
+`npm install mongoose-unique-validator --save`

@@ -26,7 +26,7 @@
         <tr *ngFor="let animal of listAnimales">
             <td id="color1" >{{animal.nombre}}</td>
             <td id="color1">{{animal.nombre_cientifico}}</td>
-            <td><button class="btn btn-light btn-sm float-right" [routerLink] = "['/animal/', 'leon']">Informacion</button></td>
+            <td><button class="btn btn-light btn-sm float-right" [routerLink] = "['/animal/', animal.nombre]">Informacion</button></td>
         </tr>
     </tbody>
 </table>

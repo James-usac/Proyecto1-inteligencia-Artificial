@@ -22,7 +22,7 @@ animalesShema.statics.allanimales = function(cb){
 }
 
 animalesShema.statics.createInstance = function(nombre, altura, peso, anio,nombre_cientifico
-    ,continente,población,velocidad){
+    ,continente,poblacion,velocidad){
     return new this({
         nombre: nombre,
         altura: altura,
@@ -30,7 +30,7 @@ animalesShema.statics.createInstance = function(nombre, altura, peso, anio,nombr
         anio: anio,
         nombre_cientifico: nombre_cientifico,
         continente: continente,
-        población: población,
+        poblacion: poblacion,
         velocidad: velocidad
     });
 }
