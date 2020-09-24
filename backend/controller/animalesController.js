@@ -15,12 +15,14 @@ exports.usuarios_list = function(req, res){
 
 exports.consulta_animales = function(req, res) {
    // var bici = new Bicicleta( req.body.code,req.body.color,req.body.modelo);
-   regla = "ejemplo(X)."
+   regla = "findall(X, (peces(X,_,_,_,_,_,_,_), longevidadmedia(X)), Hola), write(Hola)."
+   //swipl -s ejemplo.pl -g "hola(X)." -t halt.
    //cadena = 
-   exec(`swipl -s ejemplo.pl -g ${regla} -t halt.`, (err, stdout, stderr) => {
-    if (err) {
-        res.status(500).send({errorx: 'Something broke!'});
-    }
+   //animal(nombre,_,_,Z,_,no,si,si), Z > 25;
+  //longevidadalta(Animimal) ; ; 
+   //swipl -s ejemplo.pl -g "hola(X)." -t halt.
+   exec(`swipl -s ejemplo.pl -g "${regla}" -t halt.`, (err, stdout, stderr) => {
+  
     //lo que me devulve
     console.log(`stdout: ${stdout}`);
     console.log(`stderr: ${stderr}`);

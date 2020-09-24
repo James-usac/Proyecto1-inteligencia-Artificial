@@ -61,6 +61,12 @@ africa(pzglobo).
 
 oceania(tiburon).
 
+animales(X) :- moluscos(X,_,_,_,_,_,_,_).
+animales(X) :- peces(X,_,_,_,_,_,_,_).
+animales(X) :- reptiles(X,_,_,_,_,_,_,_).
+animales(X) :- aves(X,_,_,_,_,_,_,_).
+animales(X) :- mamiferos(X,_,_,_,_,_,_,_).
+
 moluscos(caracol, 0.02, 0.005, 7, "Cornu Aspersum", [america, asia, europa], 21500000, 0.013).
 moluscos(sepia, 0.9, 25, 6, "Sepiida", [asia, europa], 965425, 20).
 moluscos(calamar, 0.6, 750, 15, "Teuthida", [asia, europa], 12000000, 2.5).
@@ -139,7 +145,7 @@ novuelan(X) :- moluscos(X, _, _, _, _, _, _, _).
 novuelan(X) :- mamiferos(X, _, _, _, _, _, _, _).
 novuelan(X) :- peces(X, _, _, _, _, _, _, _).
 
-sangrecaliente(X) :- mamifero(X, _, _, _, _, _, _, _).
+sangrecaliente(X) :- mamiferos(X, _, _, _, _, _, _, _).
 sangrecaliente(X) :- aves(X, _, _, _, _, _, _, _).
 
 tomanleche(X) :- mamiferos(X, _, _, _, _, _, _, _).
@@ -148,7 +154,7 @@ longevidadbaja(X) :- peces(X, _, _, Y, _, _, _, _), Y < 10.
 longevidadbaja(X) :- moluscos(X, _, _, Y, _, _, _, _), Y < 10.
 longevidadbaja(X) :- reptiles(X, _, _, Y, _, _, _, _), Y < 10.
 longevidadbaja(X) :- aves(X, _, _, Y, _, _, _, _), Y < 10.
-longevidadbaja(X) :- mamifero(X, _, _, Y, _, _, _, _), Y < 10.
+longevidadbaja(X) :- mamiferos(X, _, _, Y, _, _, _, _), Y < 10.
 
 longevidadmedia(X) :- peces(X, _, _, Y, _, _, _, _), Y > 9, Y =< 60.
 longevidadmedia(X) :- moluscos(X, _, _, Y, _, _, _, _), Y > 9, Y =< 60.
@@ -156,7 +162,7 @@ longevidadmedia(X) :- reptiles(X, _, _, Y, _, _, _, _), Y > 9, Y =< 60.
 longevidadmedia(X) :- aves(X, _, _, Y, _, _, _, _), Y > 9, Y =< 60.
 longevidadmedia(X) :- mamiferos(X, _, _, Y, _, _, _, _), Y > 9, Y =< 60.
 
-longevidadalta(X) :- mamifero(X, _, _, Y, _, _, _, _), Y > 60.
+longevidadalta(X) :- mamiferos(X, _, _, Y, _, _, _, _), Y > 60.
 longevidadalta(X) :- aves(X, _, _, Y, _, _, _, _), Y > 60.
 longevidadalta(X) :- peces(X, _, _, Y, _, _, _, _), Y > 60.
 longevidadalta(X) :- reptiles(X, _, _, Y, _, _, _, _), Y > 60.
@@ -226,4 +232,3 @@ vertebrados(X) :- pez(X,_,_,_,_,_,_,_); ave(X,_,_,_,_,_,_,_); mamifero(X,_,_,_,_
 vertebrados(X) :- reptil(X,_,_,_,_,_,_,_), X \== anaconda.
 
 sienten(X) :- aves(X,_,_,_,_,_,_,_); peces(X,_,_,_,_,_,_,_); mamiferos(X,_,_,_,_,_,_,_); moluscos(X,_,_,_,_,_,_,_); reptiles(X,_,_,_,_,_,_,_).
-

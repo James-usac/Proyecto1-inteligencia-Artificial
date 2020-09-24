@@ -61,6 +61,7 @@ africa(pzglobo).
 
 oceania(tiburon).
 
+
 moluscos(caracol, 0.02, 0.005, 7, "Cornu Aspersum", [america, asia, europa], 21500000, 0.013).
 moluscos(sepia, 0.9, 25, 6, "Sepiida", [asia, europa], 965425, 20).
 moluscos(calamar, 0.6, 750, 15, "Teuthida", [asia, europa], 12000000, 2.5).
@@ -226,4 +227,3 @@ vertebrados(X) :- pez(X,_,_,_,_,_,_,_); ave(X,_,_,_,_,_,_,_); mamifero(X,_,_,_,_
 vertebrados(X) :- reptil(X,_,_,_,_,_,_,_), X \== anaconda.
 
 sienten(X) :- aves(X,_,_,_,_,_,_,_); peces(X,_,_,_,_,_,_,_); mamiferos(X,_,_,_,_,_,_,_); moluscos(X,_,_,_,_,_,_,_); reptiles(X,_,_,_,_,_,_,_).
-
