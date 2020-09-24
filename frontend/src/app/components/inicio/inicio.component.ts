@@ -30,6 +30,7 @@ export class InicioComponent implements OnInit {
   listAnimales: Animalesdto[];
   listAnimales2: Animalesdto;
   loading = false;
+  cadena: string;
   textoDeInput: string = null;
     constructor(private fb: FormBuilder,
        private animalser: AnimalesSerService,
@@ -67,7 +68,11 @@ export class InicioComponent implements OnInit {
     var resultado = new consultadto();
     this.listAnimales = [this.listAnimales2]
     //console.log(this.form.)
-    
+    if(this.textoDeInput==null){
+      resultado.animal = "X";
+    }else{
+      resultado.animal = this.textoDeInput;
+    }
     this.form.value.checkArray.forEach(element => {
       switch(element) {
         case "longevidadb":
@@ -93,11 +98,7 @@ export class InicioComponent implements OnInit {
           break;
       }
     });
-    if(this.textoDeInput==null){
-      resultado.animal = "X";
-    }else{
-      resultado.animal = this.textoDeInput;
-    }
+    
     this.animalser.guardaranimales(resultado).subscribe(data => {
         console.log(data)
         this.textoDeInput = null

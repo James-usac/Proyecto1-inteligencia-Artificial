@@ -67,6 +67,12 @@ animales(X) :- reptiles(X,_,_,_,_,_,_,_).
 animales(X) :- aves(X,_,_,_,_,_,_,_).
 animales(X) :- mamiferos(X,_,_,_,_,_,_,_).
 
+animales2(X) :- moluscos(X,_,_,_,Y,_,_,_), write(X), write(','), write(Y), write('@').
+animales2(X) :- peces(X,_,_,_,Y,_,_,_), write(X), write(','), write(Y), write('@').
+animales2(X) :- reptiles(X,_,_,_,Y,_,_,_), write(X), write(','), write(Y), write('@').
+animales2(X) :- aves(X,_,_,_,Y,_,_,_), write(X), write(','), write(Y), write('@').
+animales2(X) :- mamiferos(X,_,_,_,Y,_,_,_), write(X), write(','), write(Y), write('@').
+
 moluscos(caracol, 0.02, 0.005, 7, "Cornu Aspersum", [america, asia, europa], 21500000, 0.013).
 moluscos(sepia, 0.9, 25, 6, "Sepiida", [asia, europa], 965425, 20).
 moluscos(calamar, 0.6, 750, 15, "Teuthida", [asia, europa], 12000000, 2.5).
@@ -232,3 +238,6 @@ vertebrados(X) :- pez(X,_,_,_,_,_,_,_); ave(X,_,_,_,_,_,_,_); mamifero(X,_,_,_,_
 vertebrados(X) :- reptil(X,_,_,_,_,_,_,_), X \== anaconda.
 
 sienten(X) :- aves(X,_,_,_,_,_,_,_); peces(X,_,_,_,_,_,_,_); mamiferos(X,_,_,_,_,_,_,_); moluscos(X,_,_,_,_,_,_,_); reptiles(X,_,_,_,_,_,_,_).
+
+lista_animales([]) :- write('{}').
+lista_animales([Primera|Personas]) :- animales2(Primera), lista_animales(Personas).
