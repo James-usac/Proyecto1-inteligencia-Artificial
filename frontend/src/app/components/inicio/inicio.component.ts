@@ -21,8 +21,10 @@ export class InicioComponent implements OnInit {
     { name: 'Longevidad Normal', value: 'longevidadn' },
     { name: 'Longevidad Alta', value: 'longevidada' },
     { name: 'Pez', value: 'pez' },
-    { name: 'Anfibio', value: 'anfibio' },
+    { name: 'Aves', value: 'anfibio' },
     { name: 'Reptil', value: 'reptil' },
+    { name: 'Moluscos', value: 'moluscos' },
+    { name: 'Mamiferos', value: 'mamifero' },
     { name: 'Invertebrado', value: 'invertebrado' },
     { name: 'Vertebrado', value: 'vertebrado' }
   ]
@@ -90,8 +92,17 @@ export class InicioComponent implements OnInit {
         case "invertebrado":
           resultado.invertebrado = "si"
           break;
+        case "vertebrado":
+            resultado.vertebrado = "si"
+            break;
         case "pez":
           resultado.pez= "si"
+          break;
+        case "moluscos":
+          resultado.moluscos= "si"
+          break;
+        case "mamifero":
+          resultado.mamifero ="si"
           break;
         case "reptil":
           resultado.reptil= "si"

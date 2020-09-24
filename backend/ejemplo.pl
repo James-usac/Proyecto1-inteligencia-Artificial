@@ -79,7 +79,7 @@ moluscos(calamar, 0.6, 750, 15, "Teuthida", [asia, europa], 12000000, 2.5).
 moluscos(pulpo, 1.2, 50, 5, "Octopoda", [asia, america], 5036500, 9.4).
 moluscos(babosa, 0.005, 0.015, 2, "Mollusca",[america, europa], 9665522, 0.015).
 
-peces(tiburon,4.1,1100,272,"Carcharodon carcharias",[america, africa,asia,oceania],2000,15.55556).
+peces(tiburon,4.1,1100,27,"Carcharodon carcharias",[america, africa,asia,oceania],2000,15.55556).
 peces(pezpayaso, 0.1, 0.005, 10, "Amphiprioninae", [asia,america], 1000000, 0.98).
 peces(anguila,0.8,3.6,50,"Anguilla anguilla",[europa,america],10000,1.388889).
 peces(pezglobo, 0.1, 0.010, 7, "Tetraodontidae", [asia,america,africa,europa], 5000000, 0.99).
@@ -231,11 +231,11 @@ tienenvida(X) :- aves(X,_,_,_,_,_,_,_) ;peces(X,_,_,_,_,_,_,_); mamiferos(X,_,_,
 
 respiran(X) :- aves(X,_,_,_,_,_,_,_); peces(X,_,_,_,_,_,_,_);mamiferos(X,_,_,_,_,_,_,_);moluscos(X,_,_,_,_,_,_,_);reptiles(X,_,_,_,_,_,_,_).
 
-invertebrados(X) :- molusco(X,_,_,_,_,_,_,_).
-invertebrados(X) :- reptil(X,_,_,_,_,_,_,_), X == anaconda.
+invertebrados(X) :- moluscos(X,_,_,_,_,_,_,_).
+invertebrados(X) :- reptiles(X,_,_,_,_,_,_,_), X == anaconda.
 
-vertebrados(X) :- pez(X,_,_,_,_,_,_,_); ave(X,_,_,_,_,_,_,_); mamifero(X,_,_,_,_,_,_,_).
-vertebrados(X) :- reptil(X,_,_,_,_,_,_,_), X \== anaconda.
+vertebrados(X) :- peces(X,_,_,_,_,_,_,_); aves(X,_,_,_,_,_,_,_); mamiferos(X,_,_,_,_,_,_,_).
+vertebrados(X) :- reptiles(X,_,_,_,_,_,_,_), X \== anaconda.
 
 sienten(X) :- aves(X,_,_,_,_,_,_,_); peces(X,_,_,_,_,_,_,_); mamiferos(X,_,_,_,_,_,_,_); moluscos(X,_,_,_,_,_,_,_); reptiles(X,_,_,_,_,_,_,_).
 

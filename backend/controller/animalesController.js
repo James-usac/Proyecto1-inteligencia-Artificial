@@ -20,20 +20,32 @@ exports.consulta_animales = function(req, res) {
    if(req.body.longevidadb=='si'){
     cadena += ", longevidadbaja("+req.body.animal+")";
    }
-   if(req.body.longevidadn){
-    cadena = ", animales("+req.body.animal+")";
-   }/*
-   if(req.body.longevidada){
-    cadena = ", animales("+req.body.animal+")";
+   if(req.body.longevidadn=='si'){
+    cadena += ", longevidadmedia("+req.body.animal+")";
    }
-   if(req.body.anfibio){
-    cadena = ", animales("+req.body.animal+")";
+   if(req.body.longevidada=='si'){
+    cadena += ", longevidadalta("+req.body.animal+")";
    }
-   if(req.body.invertebrado){
-    cadena = ", animales("+req.body.animal+")";
-   }if(req.body.vertebrado){
-    cadena = ", animales("+req.body.animal+")";
-   }*/
+   if(req.body.pez=='si'){
+    cadena += ", peces("+req.body.animal+",_,_,_,_,_,_,_)";
+   }
+   if(req.body.anfibio=='si'){
+    cadena += ", aves("+req.body.animal+",_,_,_,_,_,_,_)";
+   }
+   if(req.body.reptil=='si'){
+    cadena += ", reptiles("+req.body.animal+",_,_,_,_,_,_,_)";
+   }
+   if(req.body.moluscos=='si'){
+    cadena += ",moluscos("+req.body.animal+",_,_,_,_,_,_,_)";
+   }
+   if(req.body.mamifero=='si'){
+    cadena += ",mamiferos("+req.body.animal+",_,_,_,_,_,_,_)";
+   }
+   if(req.body.invertebrado=='si'){
+    cadena += ",invertebrados("+req.body.animal+")";
+   }if(req.body.vertebrado=='si'){
+    cadena += ", vertebrados("+req.body.animal+")";
+   }
    console.log(cadena)
    //regla = "findall(X, (peces(X,_,_,_,_,_,_,_), longevidadmedia(X)), Hola), write(Hola)."
    regla = "findall(X, ("+cadena+"), Hola), lista_animales(Hola)."

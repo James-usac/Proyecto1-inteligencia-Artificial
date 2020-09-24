@@ -6,7 +6,9 @@ var consultadto = function(
     anfibio,
     reptil,
     invertebrado,
-    vertebrado       ){
+    vertebrado,
+    moluscos,
+    mamiferos,       ){
 
     this.longevidadb = longevidadb
     this.longevidadn = longevidadn
