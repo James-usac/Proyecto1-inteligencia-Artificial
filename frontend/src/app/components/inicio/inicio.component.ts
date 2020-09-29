@@ -26,7 +26,21 @@ export class InicioComponent implements OnInit {
     { name: 'Moluscos', value: 'moluscos' },
     { name: 'Mamiferos', value: 'mamifero' },
     { name: 'Invertebrado', value: 'invertebrado' },
-    { name: 'Vertebrado', value: 'vertebrado' }
+    { name: 'Vertebrado', value: 'vertebrado' },
+    { name: 'Animal Grande', value: 'animalgrande'},
+    { name: 'Animal Pequeño', value: 'animalpequeno'},
+    { name: 'Animal Rapido', value: 'animalrapido'},
+    { name: 'Animal Lento', value: 'animallento'},
+    { name: 'Animal Velocidad Normal', value: 'velocidadnormal'},
+    { name: 'Sienten', value: 'sienten'},
+    { name: 'Vulnerable', value: 'vulnerable'},
+    { name: 'No Vulnerable', value: 'novulnerable'},
+    { name: 'Tienen Vida', value: 'tienenvida'},
+    { name: 'Respiran', value: 'respiran'},
+    { name: 'vivenenagua', value: 'vivenenagua'},
+    { name: 'ponenhuevos', value: 'ponenhuevos'},
+    { name: 'tienenalas', value: 'tienenalas'},
+    { name: 'vuelan', value: 'vuelan'}
   ]
   form: FormGroup;
   listAnimales: Animalesdto[];
@@ -107,6 +121,48 @@ export class InicioComponent implements OnInit {
         case "reptil":
           resultado.reptil= "si"
           break;
+        case "animalgrande":
+          resultado.animalgrande = "si"
+          break
+        case "animalpequeno":
+          resultado.animalpequeno = "si"
+          break;
+        case  "velocidadnormal":
+          resultado.velocidadnormal = "si"
+          break;
+        case "animalrapido":
+          resultado.animalrapido = "si"
+          break;
+        case "animallento":
+          resultado.animallento = "si"
+          break;
+        case "sienten":
+          resultado.sienten = "si"
+          break
+        case "vulnerable":
+          resultado.vulnerable = 'si'
+          break
+        case "novulnerable":
+          resultado. novulnerable = "si"
+          break
+        case "tienenvida":
+          resultado.tienenvida = "si"
+          break
+        case "respiran":
+          resultado.respiran = "si"
+          break
+        case "vivenenagua":
+          resultado.vivenenagua = "si"
+          break
+        case "ponenhuevos":
+          resultado.ponenhuevos = "si"
+          break
+        case "tienenalas":
+          resultado.tienenalas = "si"
+          break
+        case "vuelan":
+          resultado.vuelan = "si"
+          break
       }
     });
     

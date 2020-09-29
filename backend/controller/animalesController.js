@@ -45,6 +45,46 @@ exports.consulta_animales = function(req, res) {
     cadena += ",invertebrados("+req.body.animal+")";
    }if(req.body.vertebrado=='si'){
     cadena += ", vertebrados("+req.body.animal+")";
+   }if(req.body.animalgrande=='si'){
+    cadena += ", animalgrande("+req.body.animal+")";
+   }if(req.body.animalpequeno=='si'){
+    cadena += ", animalpequeno("+req.body.animal+")";
+   }
+   if(req.body.velocidadnormal=='si'){
+    cadena += ", velocidadnormal("+req.body.animal+")";
+   }
+   if(req.body.animalrapido=='si'){
+    cadena += ", animalrapido("+req.body.animal+")";
+   }
+   if(req.body.animallento=='si'){
+    cadena += ", animallento("+req.body.animal+")";
+   }
+   if(req.body.sienten=='si'){
+    cadena += ", sienten("+req.body.animal+")";
+   }
+   if(req.body.vulnerable=='si'){
+    cadena += ", vulnerable("+req.body.animal+")";
+   }
+   if(req.body.novulnerable=='si'){
+    cadena += ", novulnerable("+req.body.animal+")";
+   }
+   if(req.body.tienenvida=='si'){
+    cadena += ", tienenvida("+req.body.animal+")";
+   }
+   if(req.body.respiran=='si'){
+    cadena += ", respiran("+req.body.animal+")";
+   }
+   if(req.body.vivenenagua=='si'){
+    cadena += ", vivenenagua("+req.body.animal+")";
+   }
+   if(req.body.ponenhuevos=='si'){
+    cadena += ", ponenhuevos("+req.body.animal+")";
+   }
+   if(req.body.tienenalas=='si'){
+    cadena += ", tienenalas("+req.body.animal+")";
+   }
+   if(req.body.vuelan=='si'){
+    cadena += ", vuelan("+req.body.animal+")";
    }
    console.log(cadena)
    //regla = "findall(X, (peces(X,_,_,_,_,_,_,_), longevidadmedia(X)), Hola), write(Hola)."
@@ -67,6 +107,18 @@ exports.consulta_animales = function(req, res) {
     var obj1 = new Animalesdto(variable2[0], variable2[1]);
     Lista_animales.push(obj1);
   });
+  if(stdout=="{}"){
+    Lista_animales = []
+    var obj1 = new Animalesdto("No se encontro informacion", "");
+    Lista_animales.push(obj1);
+  }//tiburon
+  if(req.body.animal!="X"){
+    if(stdout!="{}"){
+      Lista_animales = []
+      var obj1 = new Animalesdto(req.body.animal, "");
+      Lista_animales.push(obj1);
+    }
+  }
   resultado = req.body;
    console.log(resultado)
    console.log(resultado.animal)
